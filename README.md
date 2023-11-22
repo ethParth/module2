@@ -31,13 +31,19 @@ To deploy the code locally on the harhdat network, run:
 npx hardhat node
 ```
 
+and then run:
+
+```
+npx hardhat run --network localhost scripts/deploy.js
+```
+
 and then open another terminal to interact with the Token smart contract, type in the terminal
 
 ```
 npx harhdat run scripts/<filename>.ts --network localhost
 ```
 
-### Authhors
+### Authors
 
 Parth Verma
 
