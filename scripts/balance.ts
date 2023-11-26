@@ -14,19 +14,17 @@ export async function rateOwnerChange() {
     from: deployer,
   });
 
-  console.log("Balance: before transfer " + balanceBefore);
+  console.log("Balance: " + balanceBefore);
 
-  console.log(`prev owner = ${await _contract.owner()}`);
+  console.log(`Owner = ${await _contract.owner()}`);
 
-  const transferTx = await _contract.burn(amount, {
-    from: deployer,
-  });
+  const tokenName = await _contract.name();
 
-  const balanceAfter = await _contract.getBalance(deployer, {
-    from: deployer,
-  });
+  console.log(`name of the token: ${tokenName}`);
 
-  console.log("Balance: after transfer " + balanceAfter);
+  const symbol = await _contract.symbol();
+
+  console.log(`symbol of the token: ${symbol}`);
 }
 
 rateOwnerChange()

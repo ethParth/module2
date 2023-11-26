@@ -1,14 +1,14 @@
 import hre from "hardhat";
-// const hre = require("hardhat");
 import { ethers } from "hardhat";
+import { DEPLOYER, RECEIVER, CONTRACT_ADDRESS } from "../helper";
 
-const CONTRACT_ADDRESS = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
-const recieverAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
+const _CONTRACT_ADDRESS = CONTRACT_ADDRESS;
+const recieverAddress = RECEIVER;
 const amount = 20;
-const deployer = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
+const deployer = DEPLOYER;
 
 export async function mint() {
-  const _contract = await hre.ethers.getContractAt("_ERC20", CONTRACT_ADDRESS);
+  const _contract = await hre.ethers.getContractAt("_ERC20", _CONTRACT_ADDRESS);
 
   const owner = await _contract.owner();
 
