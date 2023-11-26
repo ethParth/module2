@@ -5,7 +5,7 @@ async function main() {
   const symbol = "NWT";
   const owner = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
 
-  const ERC20 = await ethers.deployContract("ERC20", [name, symbol, owner]);
+  const ERC20 = await ethers.deployContract("_ERC20", [name, symbol, owner]);
 
   await ERC20.waitForDeployment();
 
